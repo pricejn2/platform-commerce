@@ -87,9 +87,9 @@ dependencies[] = views_content_cache
 
 files[] = commerce_kickstart.profile
 
-; Information added by Drupal.org packaging script on 2014-03-12
-version = "7.x-1.24"
+; Information added by Drupal.org packaging script on 2014-07-18
+version = "7.x-1.27"
 core = "7.x"
 project = "commerce_kickstart"
-datestamp = "1394608109"
+datestamp = "1405671528"
 
