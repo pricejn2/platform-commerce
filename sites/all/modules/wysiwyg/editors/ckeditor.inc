@@ -193,7 +193,7 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
     '#title' => t('Force paste as plain text'),
     '#default_value' => !empty($settings['forcePasteAsPlainText']),
     '#return_value' => 1,
-    '#description' => t('If enabled, all pasting operations insert plain text into the editor, loosing any formatting information possibly available in the source text. Note: Paste from Word is not affected by this setting.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'forcePasteAsPlainText', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
+    '#description' => t('If enabled, all pasting operations insert plain text into the editor, losing any formatting information possibly available in the source text. Note: Paste from Word is not affected by this setting.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'forcePasteAsPlainText', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
   );
 
   if (version_compare($installed_version, '4.1.0', '>=')) {
@@ -329,14 +329,13 @@ EOL;
  *   Drupal.settings.wysiwyg.configs.{editor}
  */
 function wysiwyg_ckeditor_settings($editor, $config, $theme) {
-  $default_skin = (version_compare($editor['installed version'], '4.0.0', '<') ? 'kama' : 'mono');
+  $default_skin = (version_compare($editor['installed version'], '4.0.0', '<') ? 'kama' : 'moono');
   $settings = array(
     // Needed to make relative paths work in the editor.
     'baseHref' => $GLOBALS['base_url'] . '/',
     'width' => 'auto',
     // For better compatibility with smaller textareas.
     'resize_minWidth' => 450,
-    'height' => 420,
     // @todo Do not use skins as themes and add separate skin handling.
     'theme' => 'default',
     'skin' => !empty($theme) ? $theme : $default_skin,

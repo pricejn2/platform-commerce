@@ -8,37 +8,43 @@
   line-height: 1.0;
   z-index: 497;
 }
-.sf-menu a {
-  display: block;
-  position: relative;
+.sf-menu ul {
+  left: 0;
+  position: absolute;
+  top: -99999em;
+  width: 12em;
+}
+.sf-menu ul li {
+  width: 100%;
 }
 .sf-menu li {
   float: left;
   position: relative;
   z-index: 498;
 }
-.sf-menu li:hover {
-  visibility: inherit;
+.sf-menu a {
+  display: block;
+  position: relative;
 }
-.sf-menu ul {
-  left: 0;
-  position: absolute;
-  top: -99999em;
-  width: 12em;
-	z-index: 499;
-}
-.sf-menu ul li {
-  width: 100%;
+.sf-menu li:hover,
+.sf-menu li.sfHover,
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+  z-index: 499;
 }
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
-	left: 0;
-	top: 2.5em;
+  left: 0;
+  top: 2.5em;
 }
 .sf-menu li li:hover > ul,
 .sf-menu li li.sfHover > ul {
-	left: 12em;
-	top: 0;
+  left: 12em;
+  top: 0;
+}
+.sf-hidden {
+  left: 0 !important;
+  top: -99999em !important;
 }
 .sf-menu a.sf-with-ul {
   min-width: 1px;
@@ -78,8 +84,10 @@ li.sfHover > a > .sf-sub-indicator {
 .sf-menu ul li.sfHover > a > .sf-sub-indicator {
   background-position: -10px 0;
 }
-.sf-shadow ul {
-  background: url('../images/shadow.png') no-repeat bottom right;
+.sf-menu.sf-horizontal.sf-shadow ul,
+.sf-menu.sf-vertical.sf-shadow ul,
+.sf-menu.sf-navbar.sf-shadow ul ul {
+  background: url('../images/shadow.png') no-repeat right bottom;
   padding: 0 8px 9px 0 !important;
   -webkit-border-top-right-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
@@ -97,17 +105,17 @@ li.sfHover > a > .sf-sub-indicator {
 }
 .sf-menu.rtl li:hover > ul,
 .sf-menu.rtl li.sfHover > ul {
-	left: auto;
-	right: 0;
+  left: auto;
+  right: 0;
 }
 .sf-menu.rtl li li:hover > ul,
 .sf-menu.rtl li li.sfHover > ul {
-	left: auto;
-	right: 12em;
+  left: auto;
+  right: 12em;
 }
 .sf-menu.rtl ul {
-	left: auto;
-	right: 0;
+  left: auto;
+  right: 0;
 }
 .sf-menu.rtl .sf-sub-indicator {
   left: 0.75em;
@@ -138,18 +146,20 @@ li.sfHover > a > .sf-sub-indicator {
 .sf-menu.rtl ul li.sfHover > a > .sf-sub-indicator {
   background-position: 0 0;
 }
-.rtl.sf-shadow ul {
-  background: url('../images/shadow.png') no-repeat bottom left;
+.sf-menu.rtl.sf-horizontal.sf-shadow ul,
+.sf-menu.rtl.sf-vertical.sf-shadow ul,
+.sf-menu.rtl.sf-navbar.sf-shadow ul ul {
+  background-position: bottom left;
   padding: 0 0 9px 8px !important;
-	-webkit-border-radius: 8px;
-	-webkit-border-top-right-radius: 0;
-	-webkit-border-bottom-left-radius: 0;
-	-moz-border-radius: 8px;
-	-moz-border-radius-topright: 0;
-	-moz-border-radius-bottomleft: 0;
-	border-radius: 8px;
-	border-top-right-radius: 0;
-	border-bottom-left-radius: 0;
+  -webkit-border-radius: 8px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius: 8px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .sf-vertical.rtl li:hover > ul,
 .sf-vertical.rtl li.sfHover > ul {
@@ -170,7 +180,7 @@ li.sfHover > a > .sf-sub-indicator {
   background-position: -10px 0;
 }
 .sf-navbar.rtl li li {
-	float: right;
+  float: right;
 }
 .sf-navbar.rtl ul .sf-sub-indicator {
   background-position: 0 -100px;
@@ -201,12 +211,12 @@ li.sfHover > a > .sf-sub-indicator {
 .sf-navbar.rtl li li:hover > ul,
 .sf-navbar.rtl li li.sfHover > ul {
   left: auto;
-	right: 0;
+  right: 0;
 }
 .sf-navbar.rtl li li li:hover > ul,
 .sf-navbar.rtl li li li.sfHover > ul {
   left: auto;
-	right: 12em;
+  right: 12em;
 }
 .sf-navbar.rtl > li > ul {
   background: transparent;

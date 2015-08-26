@@ -19,12 +19,12 @@
 .sf-navbar li li.sfHover > ul,
 .sf-navbar > li.active-trail > ul {
   left: 0;
-	top: 2.5em;
+  top: 2.5em;
 }
 .sf-navbar li li li:hover > ul,
 .sf-navbar li li li.sfHover > ul {
   left: 12em;
-	top: 0;
+  top: 0;
 }
 .sf-navbar ul .sf-sub-indicator {
   background-position: -10px -100px;
